@@ -5,10 +5,10 @@
 ### Backend Java Developer • Systems Analysis and Development Student
 
 <p>
-  <a href="https://github.com/Azevd0">
-    <img src="https://img.shields.io/badge/GitHub-Azevd0-181717?style=for-the-badge&logo=github" alt="GitHub">
+  <a href="https://azevd0.github.io/Portfolio/">
+    <img src="https://img.shields.io/badge/GitHub-Azevd0-181717?style=for-the-badge&logo=github" alt="PortFófio">
   </a>
-  <a href="https://www.linkedin.com/">
+  <a href="https://www.linkedin.com/in/davysonazvedo/">
     <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
 </p>
@@ -21,7 +21,7 @@
 <tr>
 <td width="58%" valign="top">
 
-## 👨‍💻 About me
+# About me
 
 I'm a **Backend Java Developer** and an undergraduate student in **Systems Analysis and Development**.
 
@@ -36,7 +36,7 @@ I also work with **application security, automated testing, Docker, cloud techno
 - 🗄️ PostgreSQL, JPA & Hibernate
 - 🔐 Spring Security & JWT
 - 🐳 Docker & Docker Compose
-- ☁️ AWS & local cloud emulation
+- ☁️ AWS
 - 🧪 JUnit & Mockito
 - ⚡ Redis
 - 📖 OpenAPI / Swagger
