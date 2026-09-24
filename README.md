@@ -64,10 +64,6 @@ Também trabalho com **segurança de aplicações, testes automatizados, Docker,
 
 `PostgreSQL` • `JPA` • `Hibernate` • `Redis`
 
-### Engenharia
-
-`Spring Security` • `JWT` • `JUnit` • `Mockito`
-
 ### Infraestrutura
 
 `Docker` • `Docker Compose` • `AWS` • `Linux`
