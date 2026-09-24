@@ -4,7 +4,13 @@
 
 ### Backend Java Developer · Software Development Student
 
-Building backend applications, APIs, and developer tools with a focus on Java and the Spring ecosystem.
+Building backend applications, APIs, and developer tools with a focus on Java, Spring and cloud technologies.
+
+<p>
+  <a href="https://github.com/Azevd0">
+    <img src="https://img.shields.io/badge/GitHub-Azevd0-181717?style=for-the-badge&logo=github" alt="GitHub">
+  </a>
+</p>
 
 </div>
 
@@ -14,20 +20,22 @@ Building backend applications, APIs, and developer tools with a focus on Java an
 
 I'm **Davyson de Azevedo**, a Backend Java Developer and undergraduate student in **Systems Analysis and Development**.
 
-My main focus is backend development with **Java, Spring Boot, REST APIs, JPA/Hibernate, and PostgreSQL**. I also work with application security, testing, containerization, and cloud technologies.
+My main focus is backend development with **Java, Spring Boot, REST APIs, JPA/Hibernate, and PostgreSQL**. I also work with application security, automated testing, containerization, and cloud technologies.
 
-I'm particularly interested in understanding how software works beyond the surface level — from API architecture and database modeling to security, deployment, and infrastructure.
+I enjoy understanding software beyond the code itself — from API design and database modeling to security, containers, deployment, and cloud infrastructure.
 
 ### Current focus
 
-- ☕ Java and Spring Boot backend development
+- ☕ Java & Spring Boot
 - 🔗 REST API design and integration
-- 🗄️ PostgreSQL, JPA and Hibernate
-- 🔐 Spring Security, JWT and secure API design
-- 🐳 Docker and Docker Compose
-- ☁️ AWS and local cloud emulation
-- 🧪 JUnit and Mockito
-- 📚 Continuously improving software architecture and backend engineering skills
+- 🗄️ PostgreSQL, JPA & Hibernate
+- 🔐 Spring Security & JWT
+- 🐳 Docker & Docker Compose
+- ☁️ AWS & local cloud emulation
+- 🧪 JUnit & Mockito
+- ⚡ Redis
+- 📖 OpenAPI / Swagger
+- 🐧 Linux
 
 ---
 
@@ -35,71 +43,83 @@ I'm particularly interested in understanding how software works beyond the surfa
 
 <div align="center">
 
-[![My Skills](https://skillicons.dev/icons?i=java,spring,postgresql,maven,hibernate,docker,aws,redis,git,linux)](https://skillicons.dev)
+<img src="https://skillicons.dev/icons?i=java,spring,postgresql,maven,hibernate,docker,aws,redis,git,linux&perline=10" alt="Technologies">
 
 </div>
 
-Additional experience includes **Spring Security, JWT, REST APIs, OpenAPI/Swagger, JUnit, Mockito, Docker Compose, AWS Lambda, Amazon ECR, GraalVM, and Redis**.
-
 ---
 
-## 📊 Most Used Languages
+# 📊 GitHub Dashboard
+
+## 💻 Most Used Languages
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Azevd0&layout=compact&langs_count=8&hide_border=true&theme=tokyonight" alt="Most used languages" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Azevd0&layout=compact&langs_count=8&hide_border=true&theme=tokyonight" alt="Most used programming languages">
 
 </div>
 
-> Language statistics are generated automatically from my public GitHub repositories.
+The language distribution is generated automatically from my GitHub repositories.
 
 ---
 
-## 📈 GitHub Activity
+## 📈 GitHub Statistics & Activity
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Azevd0&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=tokyonight" alt="Davyson's GitHub statistics" />
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=Azevd0&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=tokyonight" alt="GitHub statistics">
 
-<br />
+<img height="180" src="https://streak-stats.demolab.com?user=Azevd0&theme=tokyonight&hide_border=true" alt="GitHub contribution streak">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Azevd0&theme=tokyo-night&hide_border=true&area=true" alt="Davyson's GitHub activity graph" />
+</div>
+
+<br>
+
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Azevd0&theme=tokyo-night&hide_border=true&area=true" alt="GitHub contribution activity graph">
 
 </div>
 
 ---
 
-## 🚀 Featured Projects
+# 🚀 Featured Projects
 
-### [JReqs](https://github.com/Azevd0/JReqs)
+## [JReqs](https://github.com/Azevd0/JReqs)
 
-A Java-based API client inspired by Postman, designed to send and work with HTTP requests directly from the terminal. The project uses Java's HTTP Client API and is being evolved toward support for different request bodies, file uploads, binary data, multipart requests, and richer response handling.
+A Java-based API client inspired by Postman, designed to send and work with HTTP requests directly from the terminal.
 
-**Technologies:** Java · Java HTTP Client · Jakarta JSON · Java Modules
+The project uses Java's HTTP Client API and Jakarta JSON, with a modular architecture and ongoing development toward support for different request bodies, file uploads, binary data, multipart requests, and richer response handling.
 
----
-
-### [Floci](https://github.com/Azevd0/floci)
-
-A free and open-source **local AWS emulator** for development, testing, and CI. It provides AWS-shaped services locally, allowing existing AWS SDKs, CLI commands, and infrastructure workflows to run against a local environment without requiring a cloud account.
-
-**Technologies:** Java · AWS APIs · Docker · Docker Compose · Cloud Infrastructure · Local Emulation
+**Java · Java HTTP Client · Jakarta JSON · Java Modules**
 
 ---
 
-### [Order Factory](https://github.com/Azevd0/MyOrderFactory)
+## [Floci](https://github.com/Azevd0/floci)
 
-A restaurant management API focused on order processing and user management. It includes entity registration, menu management, order placement, payment records, access restrictions, financial reporting, database persistence, and caching.
+A free and open-source **local AWS emulator** for development, testing, and CI.
 
-**Technologies:** Java · Spring Boot · Spring Security · PostgreSQL · Redis · Docker · Docker Compose · GraalVM
+It provides AWS-shaped services locally, allowing AWS SDKs, CLI commands, and infrastructure workflows to run against a local environment without requiring a connection to the real AWS infrastructure.
+
+**Java · AWS APIs · Docker · Docker Compose · Cloud Infrastructure**
 
 ---
 
-### [Cellphone Manager](https://github.com/Azevd0/GestorDeTelemoveis)
+## [My Order Factory](https://github.com/Azevd0/MyOrderFactory)
 
-A REST API for managing mobile phones and brands, including CRUD operations, filtered searches, and sales functionality.
+A restaurant management backend focused on order processing and user management.
 
-**Technologies:** Java · Spring Boot · Spring Data JPA · Hibernate · PostgreSQL · Docker
+The project includes entity registration, menu management, order placement, payment records, access restrictions, financial reporting, database persistence, and caching.
+
+**Java · Spring Boot · Spring Security · PostgreSQL · Redis · Docker · GraalVM**
+
+---
+
+## [Cellphone Manager](https://github.com/Azevd0/GestorDeTelemoveis)
+
+A **Spring Boot REST API** for managing mobile phones and brands, including CRUD operations, filtered searches, and sales functionality.
+
+**Java 17 · Spring Boot · Spring Data JPA · Hibernate · PostgreSQL · Docker**
 
 ---
 
@@ -115,7 +135,7 @@ Undergraduate student
 <div align="center">
 
 <a href="https://github.com/Azevd0">
-  <img src="https://img.shields.io/badge/GitHub-Azevd0-181717?style=for-the-badge&logo=github" alt="GitHub" />
+  <img src="https://img.shields.io/badge/GitHub-Azevd0-181717?style=for-the-badge&logo=github" alt="GitHub">
 </a>
 
 </div>
@@ -124,6 +144,6 @@ Undergraduate student
 
 <div align="center">
 
-> **"Build it. Understand it. Improve it."**
+<i>Always learning. Always building.</i>
 
 </div>
