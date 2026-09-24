@@ -2,7 +2,7 @@
 
 # Davyson de Azevedo
 
-### Backend Java Developer • Systems Analysis and Development Student
+### Desenvolvedor Backend Java • Estudante de Análise e Desenvolvimento de Sistemas
 
 <p>
   <a href="https://azevd0.github.io/Portfolio/">
@@ -21,15 +21,15 @@
 <tr>
 <td width="58%" valign="top">
 
-# About me
+# Sobre mim
 
-I'm a **Backend Java Developer** and an undergraduate student in **Systems Analysis and Development**.
+Sou **Desenvolvedor Backend Java** e estudante de **Análise e Desenvolvimento de Sistemas**.
 
-My main focus is building backend applications and REST APIs with **Java, Spring Boot, JPA/Hibernate and PostgreSQL**.
+Meu principal foco é o desenvolvimento de aplicações backend e APIs REST utilizando **Java, Spring Boot, JPA/Hibernate e PostgreSQL**.
 
-I also work with **application security, automated testing, Docker, cloud technologies and local infrastructure**, always trying to understand the complete path from code to execution.
+Também trabalho com **segurança de aplicações, testes automatizados, Docker, tecnologias de nuvem e infraestrutura local**, buscando sempre compreender todo o processo, desde o código até sua execução.
 
-### Currently focused on
+### Atualmente focado em
 
 - ☕ Java & Spring Boot
 - 🔗 REST APIs
@@ -46,7 +46,7 @@ I also work with **application security, automated testing, Docker, cloud techno
 
 <td width="42%" valign="top">
 
-## 🧰 Tech Stack
+## 🧰 Stack Tecnológica
 
 <div align="center">
 
@@ -56,19 +56,19 @@ I also work with **application security, automated testing, Docker, cloud techno
 
 <br>
 
-### Development
+### Desenvolvimento
 
 `Java` • `Spring Boot` • `REST` • `Maven`
 
-### Data
+### Dados
 
 `PostgreSQL` • `JPA` • `Hibernate` • `Redis`
 
-### Engineering
+### Engenharia
 
 `Spring Security` • `JWT` • `JUnit` • `Mockito`
 
-### Infrastructure
+### Infraestrutura
 
 `Docker` • `Docker Compose` • `AWS` • `Linux`
 
@@ -78,13 +78,13 @@ I also work with **application security, automated testing, Docker, cloud techno
 
 ---
 
-# 📊 GitHub Dashboard
+# 📊 Dashboard do GitHub
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=Azevd0&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=tokyonight" alt="GitHub statistics">
+<img height="180" src="./assets/dashboard/stats.svg" alt="Estatísticas do GitHub">
 
-<img height="180" src="https://streak-stats.demolab.com?user=Azevd0&theme=tokyonight&hide_border=true" alt="GitHub contribution streak">
+<img height="180" src="./assets/dashboard/streak.svg" alt="Sequência de contribuições no GitHub">
 
 </div>
 
@@ -92,7 +92,7 @@ I also work with **application security, automated testing, Docker, cloud techno
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Azevd0&layout=compact&langs_count=8&hide_border=true&theme=tokyonight" alt="Most used languages">
+<img src="./assets/dashboard/languages.svg" alt="Linguagens mais utilizadas">
 
 </div>
 
@@ -100,13 +100,12 @@ I also work with **application security, automated testing, Docker, cloud techno
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Azevd0&theme=tokyo-night&hide_border=true&area=true" alt="GitHub activity graph">
+<img src="./assets/dashboard/activity.svg" alt="Gráfico de atividade do GitHub">
 
 </div>
-
 ---
 
-# 🚀 Featured Work
+# 🚀 Projetos em Destaque
 
 <table>
 <tr>
@@ -172,14 +171,14 @@ REST API for managing mobile phones and brands, including CRUD operations, filte
 
 ## 🎓 Education
 
-**Systems Analysis and Development**  
-Undergraduate student
+**Análise e Desenvolvimento de Sistemas**  
+Graduando
 
 ---
 
 <div align="center">
 
-### 📫 Find me on GitHub
+### 📫 Encontre-me no GitHub
 
 <a href="https://github.com/Azevd0">
   <img src="https://img.shields.io/badge/github-Azevd0-181717?style=for-the-badge&logo=github" alt="GitHub profile">
@@ -187,6 +186,6 @@ Undergraduate student
 
 <br><br>
 
-<i>Always learning. Always building.</i>
+<i>Sempre aprendendo. Sempre construindo.</i>
 
 </div>
