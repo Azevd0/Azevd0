@@ -2,13 +2,14 @@
 
 # Davyson de Azevedo
 
-### Backend Java Developer · Software Development Student
-
-Building backend applications, APIs, and developer tools with a focus on Java, Spring and cloud technologies.
+### Backend Java Developer • Systems Analysis and Development Student
 
 <p>
   <a href="https://github.com/Azevd0">
     <img src="https://img.shields.io/badge/GitHub-Azevd0-181717?style=for-the-badge&logo=github" alt="GitHub">
+  </a>
+  <a href="https://www.linkedin.com/">
+    <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
 </p>
 
@@ -16,18 +17,22 @@ Building backend applications, APIs, and developer tools with a focus on Java, S
 
 ---
 
-## 👨‍💻 About Me
+<table>
+<tr>
+<td width="58%" valign="top">
 
-I'm **Davyson de Azevedo**, a Backend Java Developer and undergraduate student in **Systems Analysis and Development**.
+## 👨‍💻 About me
 
-My main focus is backend development with **Java, Spring Boot, REST APIs, JPA/Hibernate, and PostgreSQL**. I also work with application security, automated testing, containerization, and cloud technologies.
+I'm a **Backend Java Developer** and an undergraduate student in **Systems Analysis and Development**.
 
-I enjoy understanding software beyond the code itself — from API design and database modeling to security, containers, deployment, and cloud infrastructure.
+My main focus is building backend applications and REST APIs with **Java, Spring Boot, JPA/Hibernate and PostgreSQL**.
 
-### Current focus
+I also work with **application security, automated testing, Docker, cloud technologies and local infrastructure**, always trying to understand the complete path from code to execution.
+
+### Currently focused on
 
 - ☕ Java & Spring Boot
-- 🔗 REST API design and integration
+- 🔗 REST APIs
 - 🗄️ PostgreSQL, JPA & Hibernate
 - 🔐 Spring Security & JWT
 - 🐳 Docker & Docker Compose
@@ -37,33 +42,43 @@ I enjoy understanding software beyond the code itself — from API design and da
 - 📖 OpenAPI / Swagger
 - 🐧 Linux
 
----
+</td>
 
-## 🛠️ Technologies & Tools
+<td width="42%" valign="top">
+
+## 🧰 Tech Stack
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=java,spring,postgresql,maven,hibernate,docker,aws,redis,git,linux&perline=10" alt="Technologies">
+<img src="https://skillicons.dev/icons?i=java,spring,maven,hibernate,postgresql,docker,aws,redis,git,linux&perline=5" alt="Tech stack">
 
 </div>
+
+<br>
+
+### Development
+
+`Java` • `Spring Boot` • `REST` • `Maven`
+
+### Data
+
+`PostgreSQL` • `JPA` • `Hibernate` • `Redis`
+
+### Engineering
+
+`Spring Security` • `JWT` • `JUnit` • `Mockito`
+
+### Infrastructure
+
+`Docker` • `Docker Compose` • `AWS` • `Linux`
+
+</td>
+</tr>
+</table>
 
 ---
 
 # 📊 GitHub Dashboard
-
-## 💻 Most Used Languages
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Azevd0&layout=compact&langs_count=8&hide_border=true&theme=tokyonight" alt="Most used programming languages">
-
-</div>
-
-The language distribution is generated automatically from my GitHub repositories.
-
----
-
-## 📈 GitHub Statistics & Activity
 
 <div align="center">
 
@@ -77,49 +92,81 @@ The language distribution is generated automatically from my GitHub repositories
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Azevd0&theme=tokyo-night&hide_border=true&area=true" alt="GitHub contribution activity graph">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Azevd0&layout=compact&langs_count=8&hide_border=true&theme=tokyonight" alt="Most used languages">
+
+</div>
+
+<br>
+
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Azevd0&theme=tokyo-night&hide_border=true&area=true" alt="GitHub activity graph">
 
 </div>
 
 ---
 
-# 🚀 Featured Projects
+# 🚀 Featured Work
 
-## [JReqs](https://github.com/Azevd0/JReqs)
+<table>
+<tr>
+<td width="50%" valign="top">
 
-A Java-based API client inspired by Postman, designed to send and work with HTTP requests directly from the terminal.
+### 🔗 [JReqs](https://github.com/Azevd0/JReqs)
 
-The project uses Java's HTTP Client API and Jakarta JSON, with a modular architecture and ongoing development toward support for different request bodies, file uploads, binary data, multipart requests, and richer response handling.
+A Java-based API client inspired by **Postman**, designed to send HTTP requests directly from the terminal.
 
-**Java · Java HTTP Client · Jakarta JSON · Java Modules**
+Built with Java's HTTP Client API and Jakarta JSON, using a modular Java architecture.
 
----
+**Stack**
 
-## [Floci](https://github.com/Azevd0/floci)
+`Java` · `java.net.http` · `Jakarta JSON` · `Java Modules`
 
-A free and open-source **local AWS emulator** for development, testing, and CI.
+</td>
 
-It provides AWS-shaped services locally, allowing AWS SDKs, CLI commands, and infrastructure workflows to run against a local environment without requiring a connection to the real AWS infrastructure.
+<td width="50%" valign="top">
 
-**Java · AWS APIs · Docker · Docker Compose · Cloud Infrastructure**
+### ☁️ [Floci](https://github.com/Azevd0/floci)
 
----
+An open-source **local AWS emulator** for development, testing and CI.
 
-## [My Order Factory](https://github.com/Azevd0/MyOrderFactory)
+It provides AWS-shaped services locally so existing AWS tooling can be used against a local environment.
 
-A restaurant management backend focused on order processing and user management.
+**Stack**
 
-The project includes entity registration, menu management, order placement, payment records, access restrictions, financial reporting, database persistence, and caching.
+`AWS APIs` · `Docker` · `Cloud Infrastructure`
 
-**Java · Spring Boot · Spring Security · PostgreSQL · Redis · Docker · GraalVM**
+</td>
+</tr>
 
----
+<tr>
+<td width="50%" valign="top">
 
-## [Cellphone Manager](https://github.com/Azevd0/GestorDeTelemoveis)
+### 🍔 [My Order Factory](https://github.com/Azevd0/MyOrderFactory)
 
-A **Spring Boot REST API** for managing mobile phones and brands, including CRUD operations, filtered searches, and sales functionality.
+Restaurant backend focused on users, menu management, orders, payments, access control and financial reporting.
 
-**Java 17 · Spring Boot · Spring Data JPA · Hibernate · PostgreSQL · Docker**
+The project also explores caching, containerized infrastructure and native compilation.
+
+**Stack**
+
+`Java 21+` · `Spring Boot` · `Spring Security` · `PostgreSQL` · `Redis` · `Docker` · `GraalVM`
+
+</td>
+
+<td width="50%" valign="top">
+
+### 📱 [Cellphone Manager](https://github.com/Azevd0/GestorDeTelemoveis)
+
+REST API for managing mobile phones and brands, including CRUD operations, filtered queries and sales.
+
+**Stack**
+
+`Java 17` · `Spring Boot` · `Spring Data JPA` · `Hibernate` · `PostgreSQL` · `Docker`
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -130,19 +177,15 @@ Undergraduate student
 
 ---
 
-## 📫 Connect
-
 <div align="center">
+
+### 📫 Find me on GitHub
 
 <a href="https://github.com/Azevd0">
-  <img src="https://img.shields.io/badge/GitHub-Azevd0-181717?style=for-the-badge&logo=github" alt="GitHub">
+  <img src="https://img.shields.io/badge/github-Azevd0-181717?style=for-the-badge&logo=github" alt="GitHub profile">
 </a>
 
-</div>
-
----
-
-<div align="center">
+<br><br>
 
 <i>Always learning. Always building.</i>
 
