@@ -21,7 +21,7 @@
 <tr>
 <td width="58%" valign="top">
 
-# Sobre mim
+## Sobre mim
 
 Sou **Desenvolvedor Backend Java** e estudante de **Análise e Desenvolvimento de Sistemas**.
 
@@ -127,13 +127,13 @@ Construído utilizando a API HTTP do Java e Jakarta JSON, com uma arquitetura mo
 
 ### ☁️ [Calendar](https://github.com/Azevd0/Calendar)
 
-Um projeto desenvolvido para gerenciamento e organização de eventos e compromissos em um calendário.
+Contribuição em um projeto desenvolvido para gerenciamento e organização de eventos e compromissos em um calendário.
 
 O projeto busca oferecer uma estrutura para criação, consulta e gerenciamento de eventos de forma organizada.
 
 **Tecnologias**
 
-`Java` · `Spring Boot` · `PostgreSQL`
+`Java` · `Spring Boot` · `PostgreSQL` · `Docker` · `Flutter` · `TypeScript` · `Angular`
 
 </td>
 </tr>
@@ -159,11 +159,11 @@ O projeto também explora cache, infraestrutura conteinerizada e compilação na
 
 API REST para gerenciamento de usuários, permitindo realizar operações de cadastro, consulta, atualização e exclusão de dados.
 
-O projeto utiliza uma arquitetura baseada em API REST e explora recursos de persistência e gerenciamento de dados.
+O projeto utiliza uma arquitetura baseada em API REST e explora recursos de criptografia, autenticação e serviços de nuvem.
 
 **Tecnologias**
 
-`Java` · `Spring Boot` · `Spring Data JPA` · `Hibernate` · `PostgreSQL` · `Docker`
+`Java` · `Spring Boot` · `Spring Data JPA` · `Hibernate` · `PostgreSQL` · `Docker` · `AWS`
 
 </td>
 </tr>
