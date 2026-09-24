@@ -6,7 +6,7 @@
 
 <p>
   <a href="https://azevd0.github.io/Portfolio/">
-    <img src="https://img.shields.io/badge/GitHub-Azevd0-181717?style=for-the-badge&logo=github" alt="PortFófio">
+    <img src="https://img.shields.io/badge/GitHub-PortFólio-181717?style=for-the-badge&logo=github" alt="PortFólio">
   </a>
   <a href="https://www.linkedin.com/in/davysonazvedo/">
     <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
@@ -113,11 +113,11 @@ Também trabalho com **segurança de aplicações, testes automatizados, Docker,
 
 ### 🔗 [JReqs](https://github.com/Azevd0/JReqs)
 
-A Java-based API client inspired by **Postman**, designed to send HTTP requests directly from the terminal.
+Um cliente de API desenvolvido em Java e inspirado no **Postman**, projetado para enviar requisições HTTP diretamente pelo terminal.
 
-Built with Java's HTTP Client API and Jakarta JSON, using a modular Java architecture.
+Construído utilizando a API HTTP do Java e Jakarta JSON, com uma arquitetura modular baseada no sistema de módulos do Java.
 
-**Stack**
+**Tecnologias**
 
 `Java` · `java.net.http` · `Jakarta JSON` · `Java Modules`
 
@@ -125,15 +125,15 @@ Built with Java's HTTP Client API and Jakarta JSON, using a modular Java archite
 
 <td width="50%" valign="top">
 
-### ☁️ [Floci](https://github.com/Azevd0/floci)
+### ☁️ [Calendar](https://github.com/Azevd0/Calendar)
 
-An open-source **local AWS emulator** for development, testing and CI.
+Um projeto desenvolvido para gerenciamento e organização de eventos e compromissos em um calendário.
 
-It provides AWS-shaped services locally so existing AWS tooling can be used against a local environment.
+O projeto busca oferecer uma estrutura para criação, consulta e gerenciamento de eventos de forma organizada.
 
-**Stack**
+**Tecnologias**
 
-`AWS APIs` · `Docker` · `Cloud Infrastructure`
+`Java` · `Spring Boot` · `PostgreSQL`
 
 </td>
 </tr>
@@ -143,11 +143,11 @@ It provides AWS-shaped services locally so existing AWS tooling can be used agai
 
 ### 🍔 [My Order Factory](https://github.com/Azevd0/MyOrderFactory)
 
-Restaurant backend focused on users, menu management, orders, payments, access control and financial reporting.
+Backend para gerenciamento de restaurantes, com foco em usuários, gerenciamento de cardápio, pedidos, pagamentos, controle de acesso e relatórios financeiros.
 
-The project also explores caching, containerized infrastructure and native compilation.
+O projeto também explora cache, infraestrutura conteinerizada e compilação nativa.
 
-**Stack**
+**Tecnologias**
 
 `Java 21+` · `Spring Boot` · `Spring Security` · `PostgreSQL` · `Redis` · `Docker` · `GraalVM`
 
@@ -155,36 +155,20 @@ The project also explores caching, containerized infrastructure and native compi
 
 <td width="50%" valign="top">
 
-### 📱 [Cellphone Manager](https://github.com/Azevd0/GestorDeTelemoveis)
+### 📱 [Cadastro de Usuário](https://github.com/Azevd0/Cadastro-de-Usuario)
 
-REST API for managing mobile phones and brands, including CRUD operations, filtered queries and sales.
+API REST para gerenciamento de usuários, permitindo realizar operações de cadastro, consulta, atualização e exclusão de dados.
 
-**Stack**
+O projeto utiliza uma arquitetura baseada em API REST e explora recursos de persistência e gerenciamento de dados.
 
-`Java 17` · `Spring Boot` · `Spring Data JPA` · `Hibernate` · `PostgreSQL` · `Docker`
+**Tecnologias**
+
+`Java` · `Spring Boot` · `Spring Data JPA` · `Hibernate` · `PostgreSQL` · `Docker`
 
 </td>
 </tr>
 </table>
-
 ---
-
-## 🎓 Education
-
-**Análise e Desenvolvimento de Sistemas**  
-Graduando
-
----
-
-<div align="center">
-
-### 📫 Encontre-me no GitHub
-
-<a href="https://github.com/Azevd0">
-  <img src="https://img.shields.io/badge/github-Azevd0-181717?style=for-the-badge&logo=github" alt="GitHub profile">
-</a>
-
-<br><br>
 
 <i>Sempre aprendendo. Sempre construindo.</i>
 
