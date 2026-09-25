@@ -99,8 +99,6 @@ Também trabalho com **segurança de aplicações, testes automatizados, Docker,
 
 `Java` `HTTP` `Terminal` `CLI` `Jakarta Json`
 
-<a href="https://github.com/Azevd0/JReqs">github.com/Azevd0/JReqs</a>
-
 </td>
 <td width="50%" valign="top">
 
@@ -108,9 +106,8 @@ Também trabalho com **segurança de aplicações, testes automatizados, Docker,
 
 <sub>Contribuição em um projeto para gerenciamento e organização de eventos e compromissos em calendário.</sub>
 
-`Java` `Spring Boot` `PostgreSQL` `Docker` `Flutter` `TypeScript` `Angular`
+`Java` `Spring Boot` `PostgreSQL` `Docker` `TypeScript` `Angular`
 
-<a href="https://github.com/Azevd0/Calendar">github.com/Azevd0/Calendar</a>
 
 </td>
 </tr>
@@ -123,7 +120,6 @@ Também trabalho com **segurança de aplicações, testes automatizados, Docker,
 
 `Java 21+` `Spring Boot` `Spring Security` `PostgreSQL` `Redis` `Docker` `GraalVM`
 
-<a href="https://github.com/Azevd0/MyOrderFactory">github.com/Azevd0/MyOrderFactory</a>
 
 </td>
 <td width="50%" valign="top">
@@ -134,7 +130,6 @@ Também trabalho com **segurança de aplicações, testes automatizados, Docker,
 
 `Java` `Spring Boot` `Spring Data JPA` `Hibernate` `PostgreSQL` `Docker` `AWS`
 
-<a href="https://github.com/Azevd0/Cadastro-de-Usuario">github.com/Azevd0/Cadastro-de-Usuario</a>
 
 </td>
 </tr>
