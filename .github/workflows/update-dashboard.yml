@@ -47,6 +47,17 @@ jobs:
                   stargazerCount
                   forkCount
                   primaryLanguage { name }
+                }
+              }
+
+              languageRepositories: repositories(
+                first:100,
+                ownerAffiliations:OWNER,
+                privacy:PUBLIC,
+                isFork:false
+              ) {
+                nodes {
+                  primaryLanguage { name }
                   languages(first:10, orderBy:{field:SIZE, direction:DESC}) {
                     edges { size node { name } }
                   }
@@ -85,6 +96,7 @@ jobs:
 
           u = data["data"]["user"]
           repos = u["repositories"]["nodes"]
+          lang_repos = u["languageRepositories"]["nodes"]
           cc = u["contributionsCollection"]
           calendar = cc["contributionCalendar"]
 
@@ -128,14 +140,24 @@ jobs:
                         text(x, y + 22, label, 12, "400", "#8b949e")]
           open("assets/dashboard/stats.svg","w").write(svg("".join(parts), 900, 240))
 
+          # Language dashboard: only original repositories, excluding languages
+          # that are not part of the user's current development stack.
+          ignored_languages = {"Go", "Python", "Shell"}
           language_sizes = {}
-          for r in repos:
+          for r in lang_repos:
               for edge in r["languages"]["edges"]:
-                  language_sizes[edge["node"]["name"]] = language_sizes.get(edge["node"]["name"], 0) + edge["size"]
+                  name = edge["node"]["name"]
+                  if name in ignored_languages:
+                      continue
+                  language_sizes[name] = language_sizes.get(name, 0) + edge["size"]
+
           langs = sorted(language_sizes.items(), key=lambda x: x[1], reverse=True)[:8]
           total = sum(v for _, v in langs) or 1
-          parts = [text(28, 38, "Most used languages", 22, "700", "#f0f6fc")]
-          y = 72
+          parts = [
+              text(28, 38, "Most used languages", 22, "700", "#f0f6fc"),
+              text(28, 61, "Java is my primary language", 12, "400", "#8b949e")
+          ]
+          y = 86
           for name, size in langs:
               pct = size / total * 100
               parts += [text(28, y, name, 13, "400", "#c9d1d9"),
