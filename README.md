@@ -97,14 +97,14 @@ Também trabalho com **segurança de aplicações, testes automatizados, Docker,
 
 <sub>Cliente HTTP em terminal, inspirado no Postman. Permite testar e explorar APIs de forma simples e eficiente.</sub>
 
-`Java` `HTTP` `Terminal` `CLI`
+`Java` `HTTP` `Terminal` `CLI` `Jakarta Json`
 
 <a href="https://github.com/Azevd0/JReqs">github.com/Azevd0/JReqs</a>
 
 </td>
 <td width="50%" valign="top">
 
-### ☁️ [Calendar](https://github.com/Azevd0/Calendar)
+### 📅 [Calendar](https://github.com/Azevd0/Calendar)
 
 <sub>Contribuição em um projeto para gerenciamento e organização de eventos e compromissos em calendário.</sub>
 
