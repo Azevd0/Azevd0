@@ -123,7 +123,7 @@ jobs:
               ("Repositórios", u["repositories"]["totalCount"]),
               ("Seguidores", u["followers"]["totalCount"]),
               ("Estrelas", total_stars),
-              ("Contribuições", total_contrib),
+              ("Issues", issues),
               ("Commits", commits),
               ("Pull requests", prs),
           ]
@@ -206,7 +206,7 @@ jobs:
               streak += 1
               cursor -= timedelta(days=1)
 
-          parts = [text(28, 38, "Sequência de contribuições", 22, "700", "#f0f6fc"),
+          parts = [text(28, 38, "Streak", 22, "700", "#f0f6fc"),
                    text(28, 92, str(streak), 42, "700", "#58a6ff"),
                    text(28, 120, "dias consecutivos", 13, "400", "#8b949e")]
           open("assets/dashboard/streak.svg","w").write(svg("".join(parts), 260, 150))
