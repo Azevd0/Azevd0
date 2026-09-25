@@ -5,10 +5,10 @@
 ### Desenvolvedor Backend Java • Estudante de Análise e Desenvolvimento de Sistemas
 
 <p>
-  <a href="https://azevd0.github.io/Portfolio/" target= blank>
+  <a href="https://azevd0.github.io/Portfolio/" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-PortFólio-181717?style=for-the-badge&logo=github" alt="PortFólio">
   </a>
-  <a href="https://www.linkedin.com/in/davysonazvedo/"  target= blank>
+  <a href="https://www.linkedin.com/in/davysonazvedo/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
 </p>
