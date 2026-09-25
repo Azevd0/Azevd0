@@ -34,8 +34,8 @@ jobs:
           token = os.environ["GH_TOKEN"]
 
           query = r'''
-          query($login:String!) {
-            user(login:$login) {
+          query($login:String!, $issueQuery:String!) {
+            search(query:$issueQuery, type:ISSUE, first:1) {\n              issueCount\n            }\n            user(login:$login) {
               name
               login
               followers { totalCount }
@@ -83,7 +83,7 @@ jobs:
           }
           '''
 
-          payload = json.dumps({"query": query, "variables": {"login": user}})
+          payload = json.dumps({"query": query, "variables": {"login": user, "issueQuery": f"author:{user} is:issue"}})
           result = subprocess.run(
               ["curl", "-fsSL", "-H", f"Authorization: bearer {token}",
                "-H", "Content-Type: application/json",
@@ -116,7 +116,7 @@ jobs:
           total_forks = sum(r["forkCount"] for r in repos)
           commits = cc["totalCommitContributions"]
           prs = cc["totalPullRequestContributions"]
-          issues = cc["totalIssueContributions"]
+          issues = data["data"]["search"]["issueCount"]
           total_contrib = calendar["totalContributions"]
 
           stats = [
