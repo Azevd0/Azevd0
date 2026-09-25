@@ -77,8 +77,11 @@ Também trabalho com **segurança de aplicações, testes automatizados, Docker,
 
 <div align="center">
 
-<img width="49%" src="./assets/dashboard/languages.svg" alt="Linguagens mais utilizadas">
-<img width="49%" src="./assets/dashboard/activity.svg" alt="Atividade no GitHub">
+<img width="780" src="./assets/dashboard/languages.svg" alt="Linguagens mais utilizadas">
+
+<br>
+
+<img width="780" src="./assets/dashboard/activity.svg" alt="Atividade no GitHub">
 
 </div>
 
