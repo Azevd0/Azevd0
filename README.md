@@ -79,7 +79,7 @@ Também trabalho com **segurança de aplicações, testes automatizados, Docker,
 <div align="center">
 
 <img height="180" src="./assets/dashboard/stats.svg" alt="Estatísticas do GitHub">
-<img height="180" src="./assets/dashboard/streak.svg" alt="Sequência de contribuições no GitHub">
+<img height="180" src="./assets/dashboard/streak.svg" alt="Streak no GitHub">
 
 </div>
 
