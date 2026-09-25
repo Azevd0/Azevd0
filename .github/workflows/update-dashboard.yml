@@ -5,8 +5,7 @@ on:
     - cron: "17 3 * * *"
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: write
@@ -14,249 +13,82 @@ permissions:
 jobs:
   update-dashboard:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Gerar dashboard
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p assets/dashboard
-
           python3 <<'PY'
-          import json
-          import os
-          import subprocess
+          import json, math, os, subprocess
           from datetime import datetime, timezone, timedelta
           from html import escape
-          import math
 
-          user = "Azevd0"
-          token = os.environ["GH_TOKEN"]
-
-          query = '''
-          query($login:String!, $issueQuery:String!) {
-            search(query:$issueQuery, type:ISSUE, first:1) {
-              issueCount
-            }
-            user(login:$login) {
-              login
-              followers { totalCount }
-              repositories(first:100, ownerAffiliations:OWNER, privacy:PUBLIC) {
-                totalCount
-                nodes {
-                  stargazerCount
-                }
-              }
-              languageRepositories: repositories(
-                first:100,
-                ownerAffiliations:OWNER,
-                privacy:PUBLIC,
-                isFork:false
-              ) {
-                nodes {
-                  languages(first:10, orderBy:{field:SIZE, direction:DESC}) {
-                    edges {
-                      size
-                      node { name }
-                    }
-                  }
-                }
-              }
-              contributionsCollection {
-                totalCommitContributions
-                totalPullRequestContributions
-                contributionCalendar {
-                  totalContributions
-                  weeks {
-                    contributionDays {
-                      contributionCount
-                      date
-                    }
-                  }
-                }
-              }
-            }
-          }
-          '''
-
-          payload = json.dumps({
-              "query": query,
-              "variables": {
-                  "login": user,
-                  "issueQuery": f"author:{user} is:issue"
-              }
-          })
-
-          result = subprocess.run(
-              [
-                  "curl", "-fsSL",
-                  "-H", f"Authorization: bearer {token}",
-                  "-H", "Content-Type: application/json",
-                  "-d", payload,
-                  "https://api.github.com/graphql"
-              ],
-              capture_output=True,
-              text=True,
-              check=True
-          )
-
-          data = json.loads(result.stdout)
-          if "errors" in data:
-              raise SystemExit(json.dumps(data["errors"]))
-
-          u = data["data"]["user"]
-          repos = u["repositories"]["nodes"]
-          lang_repos = u["languageRepositories"]["nodes"]
-          cc = u["contributionsCollection"]
-          calendar = cc["contributionCalendar"]
-          issues = data["data"]["search"]["issueCount"]
-          commits = cc["totalCommitContributions"]
-          prs = cc["totalPullRequestContributions"]
-
+          USER = "Azevd0"
+          TOKEN = os.environ["GH_TOKEN"]
           FONT = "Fira Code, monospace"
-          BG = "#0b1422"
-          BORDER = "#16304f"
-          TEXT = "#f0f6fc"
-          MUTED = "#8b949e"
-          BLUE = "#3178ff"
+          BG, BORDER, TEXT, MUTED, BLUE = "#0b1422", "#16304f", "#f0f6fc", "#8b949e", "#3178ff"
 
-          def esc(value):
-              return escape(str(value), quote=True)
+          def text(x,y,v,size=12,weight="400",fill=TEXT,anchor="start"):
+              return f'<text x="{x}" y="{y}" fill="{fill}" font-family="{FONT}" font-size="{size}px" font-weight="{weight}" text-anchor="{anchor}">{escape(str(v))}</text>'
+          def frame(w,h,c):
+              return f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}"><rect width="100%" height="100%" rx="14" fill="{BG}"/><rect x="1" y="1" width="{w-2}" height="{h-2}" rx="13" fill="none" stroke="{BORDER}"/>{c}</svg>'
 
-          def text(x, y, value, size=11, weight="400", fill=TEXT, anchor="start"):
-              return (
-                  f'<text x="{x}" y="{y}" fill="{fill}" '
-                  f'font-family="{FONT}" font-size="{size}px" '
-                  f'font-weight="{weight}" text-anchor="{anchor}">{esc(value)}</text>'
-              )
+          # GraphQL: repositories, languages, commits, PRs and contribution calendar.
+          q = '''query($login:String!){user(login:$login){repositories(first:100,ownerAffiliations:OWNER,privacy:PUBLIC){totalCount} languageRepositories:repositories(first:100,ownerAffiliations:OWNER,privacy:PUBLIC,isFork:false){nodes{languages(first:10,orderBy:{field:SIZE,direction:DESC}){edges{size node{name}}}}} contributionsCollection{totalCommitContributions totalPullRequestContributions contributionCalendar{weeks{contributionDays{date contributionCount}}}}}}}'''
+          p = json.dumps({"query":q,"variables":{"login":USER}})
+          raw = subprocess.run(["curl","-fsSL","-H",f"Authorization: bearer {TOKEN}","-H","Content-Type: application/json","-d",p,"https://api.github.com/graphql"],capture_output=True,text=True,check=True).stdout
+          d=json.loads(raw)
+          if d.get("errors"): raise SystemExit(json.dumps(d["errors"]))
+          u=d["data"]["user"]
+          cc=u["contributionsCollection"]
 
-          def frame(width, height, content):
-              return (
-                  f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-                  f'viewBox="0 0 {width} {height}">'
-                  f'<rect width="100%" height="100%" rx="12" fill="{BG}"/>'
-                  f'<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="11" fill="none" stroke="{BORDER}"/>'
-                  f'{content}</svg>'
-              )
+          # Profile-wide authored Issues. This is deliberately independent of the contribution calendar.
+          issue_url=f"https://api.github.com/search/issues?q=author:{USER}%20is:issue&per_page=1"
+          issue_data=json.loads(subprocess.run(["curl","-fsSL","-H","Accept: application/vnd.github+json",issue_url],capture_output=True,text=True,check=True).stdout)
+          issues=issue_data["total_count"]
+          commits=cc["totalCommitContributions"]
+          prs=cc["totalPullRequestContributions"]
 
-          # -------------------- Linguagens --------------------
-          ignored = {"Go", "Python", "Shell"}
-          language_sizes = {}
-          for repo in lang_repos:
-              for edge in repo["languages"]["edges"]:
-                  name = edge["node"]["name"]
-                  if name in ignored:
-                      continue
-                  language_sizes[name] = language_sizes.get(name, 0) + edge["size"]
+          # Languages: original repositories only; intentionally exclude Go/Python/Shell.
+          sizes={}
+          for repo in u["languageRepositories"]["nodes"]:
+              for e in repo["languages"]["edges"]:
+                  name=e["node"]["name"]
+                  if name not in {"Go","Python","Shell"}: sizes[name]=sizes.get(name,0)+e["size"]
+          langs=sorted(sizes.items(),key=lambda x:x[1],reverse=True)[:6]
+          total=sum(v for _,v in langs) or 1
+          colors=["#3178ff","#f1e05a","#e34c26","#f34b7d","#563d7c","#8b949e"]
+          parts=[text(28,38,"Linguagens mais utilizadas",18,"700")]
+          cx,cy,r,sw=145,150,82,36
+          circ=2*math.pi*r; acc=0
+          for i,(name,size) in enumerate(langs):
+              pct=size/total; dash=pct*circ
+              parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{colors[i]}" stroke-width="{sw}" stroke-dasharray="{dash:.2f} {circ:.2f}" stroke-dashoffset="{-acc*circ:.2f}" transform="rotate(-90 {cx} {cy})"/>')
+              acc+=pct
+          parts += [f'<circle cx="{cx}" cy="{cy}" r="64" fill="{BG}"/>',text(cx,cy+9,u["repositories"]["totalCount"],30,"700",TEXT,"middle"),text(cx,cy+34,"repos",12,"400",MUTED,"middle")]
+          y=78
+          for i,(name,size) in enumerate(langs):
+              parts += [f'<circle cx="390" cy="{y-5}" r="5" fill="{colors[i]}"/>',text(408,y,name,15,"400","#c9d1d9"),text(730,y,f"{size/total*100:.1f}%",15,"700",MUTED,"end")]
+              y+=34
+          open("assets/dashboard/languages.svg","w",encoding="utf-8").write(frame(780,300,"".join(parts)))
 
-          langs = sorted(language_sizes.items(), key=lambda item: item[1], reverse=True)[:6]
-          total_size = sum(size for _, size in langs) or 1
-          colors = ["#3178ff", "#f1e05a", "#e34c26", "#f34b7d", "#563d7c", "#8b949e"]
-
-          parts = [text(22, 30, "Linguagens mais utilizadas", 15, "700")]
-          cx, cy, radius, stroke = 82, 108, 55, 27
-          circumference = 2 * math.pi * radius
-          cumulative = 0
-
-          for i, (name, size) in enumerate(langs):
-              pct = size / total_size
-              dash = pct * circumference
-              offset = -cumulative * circumference
-              parts.append(
-                  f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" '
-                  f'stroke="{colors[i % len(colors)]}" stroke-width="{stroke}" '
-                  f'stroke-dasharray="{dash:.2f} {circumference:.2f}" '
-                  f'stroke-dashoffset="{offset:.2f}" transform="rotate(-90 {cx} {cy})"/>'
-              )
-              cumulative += pct
-
-          parts.append(f'<circle cx="{cx}" cy="{cy}" r="39" fill="{BG}"/>')
-          parts.append(text(cx, cy + 5, str(u["repositories"]["totalCount"]), 20, "700", TEXT, "middle"))
-          parts.append(text(cx, cy + 23, "repos", 9, "400", MUTED, "middle"))
-
-          y = 67
-          for i, (name, size) in enumerate(langs):
-              pct = size / total_size * 100
-              color = colors[i % len(colors)]
-              parts.append(f'<circle cx="177" cy="{y-4}" r="4" fill="{color}"/>')
-              parts.append(text(190, y, name, 10, "400", "#c9d1d9"))
-              parts.append(text(488, y, f"{pct:.1f}%", 10, "700", MUTED, "end"))
-              y += 23
-
-          open("assets/dashboard/languages.svg", "w", encoding="utf-8").write(
-              frame(520, 210, "".join(parts))
-          )
-
-          # -------------------- Atividade --------------------
-          days = []
-          for week in calendar["weeks"]:
-              days.extend(week["contributionDays"])
-          days = sorted(days, key=lambda day: day["date"])[-365:]
-
-          by_date = {
-              datetime.strptime(day["date"], "%Y-%m-%d").date(): day["contributionCount"]
-              for day in days
-          }
-          today = datetime.now(timezone.utc).date()
-          cursor = today
-          streak = 0
-          if by_date.get(cursor, 0) == 0:
-              cursor -= timedelta(days=1)
-          while by_date.get(cursor, 0) > 0:
-              streak += 1
-              cursor -= timedelta(days=1)
-
-          parts = [
-              text(22, 30, "Atividade no GitHub", 15, "700"),
-              text(498, 30, "Últimos 12 meses", 9, "400", MUTED, "end"),
-              text(22, 58, commits, 16, "700", BLUE),
-              text(22, 73, "Commits", 9, "400", MUTED),
-              text(140, 58, prs, 16, "700", BLUE),
-              text(140, 73, "Pull requests", 9, "400", MUTED),
-              text(258, 58, issues, 16, "700", BLUE),
-              text(258, 73, "Issues", 9, "400", MUTED),
-              text(376, 58, streak, 16, "700", BLUE),
-              text(376, 73, "Streak", 9, "400", MUTED),
-          ]
-
-          max_count = max((day["contributionCount"] for day in days), default=1)
-          cell = 8
-          gap = 2
-          start_x = 22
-          start_y = 91
-
-          for i, day in enumerate(days):
-              col = i // 7
-              row = i % 7
-              x = start_x + col * (cell + gap)
-              y = start_y + row * (cell + gap)
-              intensity = day["contributionCount"] / max_count
-              if day["contributionCount"] == 0:
-                  fill = "#101a27"
-              elif intensity < .25:
-                  fill = "#123f4a"
-              elif intensity < .50:
-                  fill = "#146c7d"
-              elif intensity < .75:
-                  fill = "#1ca5b8"
-              else:
-                  fill = "#35d6e5"
-              parts.append(
-                  f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" fill="{fill}">'
-                  f'<title>{esc(day["date"])}: {day["contributionCount"]} contribuições</title></rect>'
-              )
-
-          parts += [
-              text(22, 176, "Menos atividade", 8, "400", MUTED),
-              text(498, 176, "Mais atividade", 8, "400", MUTED, "end"),
-          ]
-
-          open("assets/dashboard/activity.svg", "w", encoding="utf-8").write(
-              frame(520, 195, "".join(parts))
-          )
+          # Activity and current Streak.
+          days=sorted([x for w in cc["contributionCalendar"]["weeks"] for x in w["contributionDays"]],key=lambda x:x["date"])[-365:]
+          bydate={datetime.strptime(x["date"],"%Y-%m-%d").date():x["contributionCount"] for x in days}
+          cur=datetime.now(timezone.utc).date(); streak=0
+          if bydate.get(cur,0)==0: cur-=timedelta(days=1)
+          while bydate.get(cur,0)>0: streak+=1; cur-=timedelta(days=1)
+          parts=[text(28,38,"Atividade no GitHub",18,"700"),text(752,38,"Últimos 12 meses",10,"400",MUTED,"end"),text(28,76,commits,22,"700",BLUE),text(28,96,"Commits",10,"400",MUTED),text(190,76,prs,22,"700",BLUE),text(190,96,"Pull requests",10,"400",MUTED),text(352,76,issues,22,"700",BLUE),text(352,96,"Issues",10,"400",MUTED),text(514,76,streak,22,"700",BLUE),text(514,96,"Streak",10,"400",MUTED)]
+          mx=max([x["contributionCount"] for x in days] or [1]); cell=12; gap=3
+          for i,x in enumerate(days):
+              col,row=i//7,i%7; px,py=28+col*(cell+gap),120+row*(cell+gap); n=x["contributionCount"]; z=n/mx
+              fill="#101a27" if n==0 else "#123f4a" if z<.25 else "#146c7d" if z<.5 else "#1ca5b8" if z<.75 else "#35d6e5"
+              parts.append(f'<rect x="{px}" y="{py}" width="{cell}" height="{cell}" rx="2" fill="{fill}"><title>{x["date"]}: {n} contribuições</title></rect>')
+          parts += [text(28,277,"Menos atividade",10,"400",MUTED),text(752,277,"Mais atividade",10,"400",MUTED,"end")]
+          open("assets/dashboard/activity.svg","w",encoding="utf-8").write(frame(780,300,"".join(parts)))
           PY
 
       - name: Commit dashboard assets
@@ -264,9 +96,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/dashboard/languages.svg assets/dashboard/activity.svg
-          if git diff --cached --quiet; then
-            echo "Nenhuma alteração no dashboard."
-          else
-            git commit -m "chore: atualizar dashboard do GitHub"
-            git push
-          fi
+          git diff --cached --quiet || (git commit -m "chore: atualizar dashboard do GitHub" && git push)
