@@ -148,7 +148,7 @@ O projeto também explora cache, infraestrutura conteinerizada e compilação na
 
 <td width="50%" valign="top">
 
-### 📱 [Cadastro de Usuário](https://github.com/Azevd0/Cadastro-de-Usuario)
+### 🔒 [Cadastro de Usuário](https://github.com/Azevd0/Cadastro-de-Usuario)
 
 API REST para gerenciamento de usuários, permitindo realizar operações de cadastro, consulta, atualização e exclusão de dados.
 
