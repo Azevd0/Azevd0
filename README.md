@@ -27,7 +27,7 @@ Sou **Desenvolvedor Backend Java** e estudante de **Análise e Desenvolvimento d
 
 Meu principal foco é o desenvolvimento de aplicações backend e APIs REST utilizando **Java, Spring Boot, JPA/Hibernate e PostgreSQL**.
 
-Também trabalho com **segurança de aplicações, testes automatizados, Docker, e infraestrutura com ambientes Linux e serviços de nuvem**, buscando sempre compreender todo o processo, desde o código até sua execução.
+Minha experiência abrange projetos pessoais e contribuição em OpenSource onde implementei conceitos de **segurança de aplicações, testes automatizados, Docker, e infraestrutura com ambientes Linux e serviços de nuvem**, buscando sempre compreender todo o processo, desde o código até sua execução.
 
 </td>
 <td width="42%" valign="top">
