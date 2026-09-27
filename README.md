@@ -120,6 +120,13 @@ Minha experiência abrange projetos pessoais e contribuição em OpenSource onde
 
 </td>
 </tr>
+<td width="50%" valign="top">
+
+### 💵 [Gestor de Finanças](https://github.com/Azevd0/Gestor-de-Financas)
+
+<sub>Sistema de gestão financeira pessoal, permitindo cadastro de receitas e despesas e consultas de relatório financeiro</sub>
+
+`Java 21+` `Maven` `PostgreSQL` `Hibernate` `JPA`
 </table>
 
 ---
