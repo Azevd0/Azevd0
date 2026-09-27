@@ -135,4 +135,9 @@ Minha experiência abrange projetos pessoais e contribuição em OpenSource onde
 
 <i>Sempre aprendendo. Sempre construindo.</i>
 
+
 </div>
+<p align="center">
+  <img src="/assets/zke0cucod3x81.jpg" alt="Guaxinim-no-pc" width="40%">
+</p>
+
