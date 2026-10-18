@@ -80,11 +80,11 @@ Minha experiência abrange projetos pessoais e contribuição em OpenSource onde
 <tr>
 <td width="50%" valign="top">
 
-### 🔗 [JReqs](https://github.com/Azevd0/JReqs)
+### 🔗 [Market Place](https://github.com/Azevd0/MarketPlace)
 
-<sub>Cliente HTTP em terminal, inspirado no Postman. Permite testar e explorar APIs de forma simples e eficiente.</sub>
+<sub>Projeto de API do bootcamp do Itaú para criação de sistema com integração com IA e reconhecimento de voz.</sub>
 
-`Java` `HTTP` `Terminal` `CLI` `Jakarta Json`
+`Java` `Spring Boot` `OpenFeign` `MongoDB` `Docker` `Redis` `MySQL`
 
 </td>
 <td width="50%" valign="top">
